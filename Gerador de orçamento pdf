@@ -1,12 +1,193 @@
-- 👋 Hi, I’m @eureisapns
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
-
-<!---
-eureisapns/eureisapns is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "a0f2829c-8742-45a1-bdf2-a9d6ae8af207",
+   "metadata": {},
+   "source": [
+    "# ARMAZENANDO DADOS"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b9faf2d6-5eb9-43a6-a6a8-b7265337dd22",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "projeto = input(\"Digite a descriçao do projeto: \")\n",
+    "\n",
+    "estimativa = input(\"Digite as Horas estimadas: \")\n",
+    "\n",
+    "valor_hora = input(\"Digite o Valor da hora trabahada: \")\n",
+    "\n",
+    "prazo_entrega = input(\"Digite o Prazo da entrega: \")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "daac8c85-0f5f-4042-aba4-e28983d0b6e4",
+   "metadata": {},
+   "source": [
+    "# GERANDO PDF"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3174efb6-445a-430d-bbc2-3c2d7615b1b0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "!pip install fpdf"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "47887f88-005f-426d-ad4a-dfbd0c6f7ff9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from fpdf import FPDF"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "08776398-30fb-428c-a8df-af5a9af4f7b3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Orcamento gerado com sucesso\n"
+     ]
+    }
+   ],
+   "source": [
+    "pdf = FPDF()\n",
+    "\n",
+    "pdf.add_page()\n",
+    "pdf.set_font(\"Arial\")\n",
+    "pdf.image(\"02.png\", x=0, y=0)\n",
+    "\n",
+    "pdf.text(28, 137, projeto)\n",
+    "pdf.text(102, 137, (estimativa) + (hora))\n",
+    "pdf.text(164.5, 137, (valor_hora) + (real) + (hora))\n",
+    "pdf.text(115, 137, prazo_entrega)\n",
+    "\n",
+    "pdf.text(139, 172.7, str(valor_total) + (real))\n",
+    "\n",
+    "\n",
+    "\n",
+    "pdf.output(\"prj1.pdf\")\n",
+    "\n",
+    "print(\"Orcamento gerado com sucesso\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d3bc64dc-f411-4562-84d9-173be29e1cbb",
+   "metadata": {},
+   "source": [
+    "# CALCULOS"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "26b66ec2-679f-44f9-a538-e0499b35e6cb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "valor_total = int(estimativa) * int(valor_hora)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "124133cf-94aa-4b26-b866-8a49f6d664df",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "valor_total"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "add73b24-8377-4bfb-9a9e-e84554701168",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "real = str(\"R$\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c6c059be-f545-4176-b91d-1f418740b5cb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "real"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "450ba2a0-fee8-4a0e-9b2f-4db13618e22d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "hora = str(\"/H\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "50e22322-6d7a-4382-a667-335c245bfdf1",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b09e40f8-a469-4baa-909b-01e193b7cf30",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.7"
+  },
+  "widgets": {
+   "application/vnd.jupyter.widget-state+json": {
+    "state": {},
+    "version_major": 2,
+    "version_minor": 0
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
